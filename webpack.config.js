@@ -32,7 +32,7 @@ module.exports = function(env = {}) {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader'
-      },{
+      }, {
         test: /\.css$/,
         loader: ExtractCSS.extract({
           use: [{
@@ -42,14 +42,14 @@ module.exports = function(env = {}) {
           }],
           fallback: 'style-loader'
         })
-      },{
+      }, {
         test: /\.scss$/,
         loader: ExtractCSS.extract({
           use: [{
             loader: 'css-loader'
           }, {
             loader: 'postcss-loader'
-          },{
+          }, {
             loader: 'sass-loader'
           }],
           fallback: 'style-loader'
