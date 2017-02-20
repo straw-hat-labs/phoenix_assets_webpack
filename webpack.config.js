@@ -62,6 +62,10 @@ module.exports = function(env = {}) {
 
     plugins: [
       ExtractCSS,
+      new Webpack.ProvidePlugin({
+        jQuery: 'jquery',
+        Tether: 'tether'
+      }),
       new Webpack.DefinePlugin({
         APP_NAME: JSON.stringify(config.app_name),
         VERSION: JSON.stringify(config.version),
@@ -71,6 +75,10 @@ module.exports = function(env = {}) {
         context: './static',
         from: '**/*',
         to: '.'
+      }, {
+        context: './node_modules/font-awesome/fonts',
+        from: '*',
+        to: './fonts'
       }])
     ]
   }

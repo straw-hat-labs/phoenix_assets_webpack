@@ -13,7 +13,10 @@ Even when the setup is built for `phoenix@1.3` out of the box the build is easie
   - PostCSS
     - Autoprefixer
 - Frameworks and Libraries
+  - jQuery
+  - Tether
   - Twitter Bootstrap 4
+  - Font Awesome
 
 # Setup
 
