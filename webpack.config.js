@@ -54,6 +54,9 @@ module.exports = function(env = {}) {
           }],
           fallback: 'style-loader'
         })
+      }, {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        loader: 'url-loader'
       }]
     },
 
