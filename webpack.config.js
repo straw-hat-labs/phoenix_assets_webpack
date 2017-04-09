@@ -11,7 +11,7 @@ const ExtractCSS = new ExtractTextPlugin({
   filename: 'css/[name].css'
 })
 
-module.exports = function(env = {}) {
+module.exports = function (env = {}) {
   return {
     target: 'web',
     entry: {
@@ -28,7 +28,7 @@ module.exports = function(env = {}) {
     },
 
     module: {
-      rules:[{
+      rules: [{
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader'

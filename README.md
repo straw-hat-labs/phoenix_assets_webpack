@@ -8,6 +8,7 @@ Even when the setup is built for `phoenix@1.3` out of the box the build is easie
 
 - Javascript
   - Babel
+  - Standard
 - CSS
   - SASS
   - PostCSS
