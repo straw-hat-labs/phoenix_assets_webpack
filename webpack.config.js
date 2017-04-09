@@ -5,11 +5,40 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const config = require('./package')
 
 const ENV = process.env.NODE_ENV || 'development'
+const IS_PROD = ENV === 'production'
 const OUTPUT_PATH = path.resolve(__dirname, '..', 'priv', 'static')
 
 const ExtractCSS = new ExtractTextPlugin({
   filename: 'css/[name].css'
 })
+
+var PLUGINS = [
+  ExtractCSS,
+  new Webpack.ProvidePlugin({
+    jQuery: 'jquery',
+    Tether: 'tether'
+  }),
+  new Webpack.DefinePlugin({
+    APP_NAME: JSON.stringify(config.app_name),
+    VERSION: JSON.stringify(config.version),
+    ENV: JSON.stringify(ENV)
+  }),
+  new CopyWebpackPlugin([{
+    context: './static',
+    from: '**/*',
+    to: '.'
+  }, {
+    context: './node_modules/font-awesome/fonts',
+    from: '*',
+    to: './fonts'
+  }])
+]
+
+if (IS_PROD) {
+  PLUGINS = PLUGINS.concat([
+    new Webpack.optimize.UglifyJsPlugin({compress: true})
+  ])
+}
 
 module.exports = function (env = {}) {
   return {
@@ -60,26 +89,10 @@ module.exports = function (env = {}) {
       }]
     },
 
-    plugins: [
-      ExtractCSS,
-      new Webpack.ProvidePlugin({
-        jQuery: 'jquery',
-        Tether: 'tether'
-      }),
-      new Webpack.DefinePlugin({
-        APP_NAME: JSON.stringify(config.app_name),
-        VERSION: JSON.stringify(config.version),
-        ENV: JSON.stringify(ENV)
-      }),
-      new CopyWebpackPlugin([{
-        context: './static',
-        from: '**/*',
-        to: '.'
-      }, {
-        context: './node_modules/font-awesome/fonts',
-        from: '*',
-        to: './fonts'
-      }])
-    ]
+    plugins: PLUGINS,
+
+    stats: {
+      colors: true
+    }
   }
 }
