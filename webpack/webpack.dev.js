@@ -7,5 +7,8 @@ module.exports = merge(common, {
   devtool: "inline-source-map",
   stats: {
     colors: true
-  }
+  },
+  performance: {
+    hints: false,
+  },
 });

@@ -5,7 +5,7 @@ import "popper.js";
 import "bootstrap/dist/js/bootstrap";
 // import 'phoenix_html'
 
-// import "./css/app.scss";
+import "./css/app.scss";
 import socket from "./socket";
 import "./service-worker-register";
 

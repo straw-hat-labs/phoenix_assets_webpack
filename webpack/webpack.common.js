@@ -13,6 +13,10 @@ const ExtractCSS = new ExtractTextPlugin({
   filename: "css/[name].css"
 });
 
+const ExtractSCSS = new ExtractTextPlugin({
+  filename: "css/[name].css"
+});
+
 module.exports = {
   target: "web",
 
@@ -22,7 +26,9 @@ module.exports = {
   },
 
   output: {
-    filename: "js/[name].js",
+    pathinfo: true,
+    filename: "js/[name].js", // "js/[name].[chunkhash:8].js"
+    chunkFilename: "js/[name].chunk.js", // "js/[name].[chunkhash:8].chunk.js"
     path: OUTPUT_PATH
   },
 
@@ -30,41 +36,62 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /(node_modules)/,
+        exclude: /(node_modules|bower_components)/,
         include: SOURCE_PATH,
-        loader: "babel-loader"
+        loader: "babel-loader",
+        options: {
+          // This is a feature of `babel-loader` for webpack (not Babel itself).
+          // It enables caching results in ./node_modules/.cache/babel-loader/
+          // directory for faster rebuilds.
+          cacheDirectory: true
+        }
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.elm$/,
+        exclude: [/elm-stuff/, /node_modules/],
+        use: {
+          loader: "elm-webpack-loader",
+          options: {
+            verbose: true,
+            warn: true,
+            debug: true
+          }
+        }
+      },
+      {
+        test: /\.(css)$/,
         loader: ExtractCSS.extract({
-          use: [
-            {
-              loader: "css-loader"
-            },
-            {
-              loader: "postcss-loader"
-            }
-          ],
+          use: ["css-loader", "postcss-loader"],
+          fallback: "style-loader"
+        })
+      },
+      {
+        test: /\.(sass|scss)$/,
+        loader: ExtractSCSS.extract({
+          use: ["css-loader", "postcss-loader", "sass-loader"],
           fallback: "style-loader"
         })
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ["file-loader"]
+        use: ["url-loader"]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ["url-loader"]
+        use: ["file-loader"]
       }
     ]
   },
 
   plugins: [
     ExtractCSS,
-    new CleanWebpackPlugin([OUTPUT_PATH]),
+    ExtractSCSS,
+    new CleanWebpackPlugin([OUTPUT_PATH], {
+      verbose: true,
+      allowExternal: true
+    }),
     new Webpack.ProvidePlugin({
-      jQuery: "jquery",
-      Tether: "tether"
+      jQuery: "jquery"
     }),
     new Webpack.EnvironmentPlugin({
       APP_NAME: config.name,

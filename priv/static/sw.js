@@ -20,7 +20,7 @@ importScripts('workbox-sw.prod.v2.1.3.js');
 const fileManifest = [
   {
     "url": "js/app.js",
-    "revision": "2c3f2f50ceae3367d2391aefefa9e41f"
+    "revision": "c2f76ce1b72b027e4b4efee60413395d"
   },
   {
     "url": "js/polyfills.js",

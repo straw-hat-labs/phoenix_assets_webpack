@@ -1,18 +1,12 @@
-/* eslint-disable import/no-extraneous-dependencies */
-
-const atImport = require("postcss-import");
-const autoprefixer = require("autoprefixer");
-const cssnext = require("postcss-cssnext");
-const cssnano = require("cssnano");
+/* eslint-disable import/no-extraneous-dependencies,global-require */
 
 module.exports = {
-  parser: "postcss-scss",
   plugins: [
-    atImport,
-    cssnext,
-    cssnano({
+    require("postcss-import"),
+    require("postcss-cssnext"),
+    require("postcss-flexbugs-fixes"),
+    require("cssnano")({
       preset: "default"
-    }),
-    autoprefixer
+    })
   ]
 };
