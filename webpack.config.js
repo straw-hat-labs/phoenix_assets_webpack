@@ -84,8 +84,15 @@ module.exports = function (env = {}) {
           fallback: 'style-loader'
         })
       }, {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
-        loader: 'url-loader'
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader'
+        ]
+      },  {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+          'file-loader'
+        ]
       }]
     },
 
