@@ -9,12 +9,6 @@
     "dev": "webpack --debug --progress --watch --colors",
     "build": "NODE_ENV=production webpack"
   },
-  "standard": {
-    "globals": [
-      "VERSION",
-      "ENV"
-    ]
-  },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
     "font-awesome": "^4.7.0",
