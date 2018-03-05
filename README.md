@@ -37,7 +37,7 @@ Even when the setup is built for `phoenix@1.3` out of the box the build is easie
 
 3. Change the watchers on `config/dev.exs` file.
   ```elixir
-  watchers: [npm: ["run", "dev",
+  watchers: [npm: ["start",
     cd: Path.expand("../assets", __DIR__)]]
   ```
 

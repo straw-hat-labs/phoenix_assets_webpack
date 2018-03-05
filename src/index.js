@@ -1,11 +1,16 @@
-import './css/app.scss'
+/* eslint-disable no-console */
 
-import 'jquery/dist/jquery'
-import 'tether/dist/js/tether'
-import 'bootstrap/dist/js/bootstrap'
-
+import "jquery/dist/jquery";
+import "popper.js";
+import "bootstrap/dist/js/bootstrap";
 // import 'phoenix_html'
 
-// import socket from './socket'
+// import "./css/app.scss";
+import socket from "./socket";
+import "./service-worker-register";
 
-console.log(`Application "${VERSION}" running on "${ENV}" mode`)
+console.log(
+  `Application "${process.env.APP_NAME} ${process.env.VERSION}" running on "${
+    process.env.NODE_ENV
+  }" mode`
+);
