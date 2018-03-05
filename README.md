@@ -1,45 +1,48 @@
-Asset pipeline using `webpack@2` for `phoenix@1.3`.
+Asset pipeline using Webpack.
 
 # RTFM lazy programmer :D
 
-Even when the setup is built for `phoenix@1.3` out of the box the build is easier to customize. You could fix the `OUTPUT_PATH` value in `webpack.config.js` file and everything should work as normal.
-
 ## What is inside?
 
+- Elm
 - Javascript
   - Babel
-  - Standard
+  - ESLint
+  - Prettier
+  - Service worker
 - CSS
   - SASS
   - PostCSS
-    - Autoprefixer
+    - CSSNext
+    - CSSNano
 - Frameworks and Libraries
   - jQuery
-  - Tether
   - Twitter Bootstrap 4
-  - Font Awesome
+  - Font Awesome Icons
 
 # Setup
 
-1. Clone the repo replacing the `assets` folder of your project
-  ```
-  $ git clone git@github.com:yordis/phoenix_assets_webpack.git   path/to/assets
-  $ cd path/to/assets
-  ```
+Clone the repo replacing the `assets` folder of your project
 
-2. Install the packages
-  ```
-  $ npm install
+```
+git clone git@github.com:yordis/phoenix_assets_webpack.git    path/to/assets
+cd path/to/assets
+```
 
-  # or if you prefer yarn
-  $ yarn install
-  ```
+Install the packages
 
-3. Change the watchers on `config/dev.exs` file.
-  ```elixir
-  watchers: [npm: ["start",
-    cd: Path.expand("../assets", __DIR__)]]
-  ```
+```
+npm install
+# or if you prefer yarn
+yarn install
+```
+
+Change the watchers on `config/dev.exs` file.
+
+```elixir
+watchers: [npm: ["start", cd: Path.expand("../assets", __DIR__)]]
+```
 
 # What's next?
+
 Hack your setup. Open issues and Repeat.
