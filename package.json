@@ -24,7 +24,7 @@
     "babel-preset-env": "^1.6.1",
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.1",
-    "css-loader": "^0.28.10",
+    "css-loader": "^0.28.11",
     "cssnano": "^3.10.0",
     "dotenv-webpack": "^1.5.5",
     "elm-webpack-loader": "^4.4.0",
