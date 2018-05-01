@@ -41,7 +41,7 @@
     "postcss-import": "^11.1.0",
     "postcss-loader": "^2.1.4",
     "prettier": "^1.12.1",
-    "sass-loader": "^6.0.7",
+    "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "url-loader": "^1.0.1",
