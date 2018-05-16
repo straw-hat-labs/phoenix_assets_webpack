@@ -3,6 +3,7 @@
 const path = require("path");
 const merge = require("webpack-merge");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const WorkboxPlugin = require("workbox-webpack-plugin");
 
 const { JS_PATH } = require("./paths");
@@ -10,14 +11,19 @@ const common = require("./webpack.common");
 
 module.exports = merge(common, {
   devtool: "source-map",
+  optimization: {
+    minimizer: [
+      new UglifyJSPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true // set to true if you want JS source maps
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ]
+  },
   plugins: [
-    new UglifyJSPlugin({
-      sourceMap: true
-    }),
-    new WorkboxPlugin({
-      swDest: path.join(JS_PATH, "sw.js"),
-      clientsClaim: true,
-      skipWaiting: true
+    new WorkboxPlugin.InjectManifest({
+      swSrc: path.join(JS_PATH, "sw.js")
     })
   ]
 });

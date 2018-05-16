@@ -1,21 +1,13 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 const Webpack = require("webpack");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 
 const { OUTPUT_PATH, SOURCE_PATH } = require("./paths");
 const config = require("../package");
-
-const ExtractCSS = new ExtractTextPlugin({
-  filename: "css/[name].css"
-});
-
-const ExtractSCSS = new ExtractTextPlugin({
-  filename: "css/[name].css"
-});
 
 module.exports = {
   target: "web",
@@ -60,17 +52,20 @@ module.exports = {
       },
       {
         test: /\.(css)$/,
-        loader: ExtractCSS.extract({
-          use: ["css-loader", "postcss-loader"],
-          fallback: "style-loader"
-        })
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader"
+        ]
       },
       {
-        test: /\.(sass|scss)$/,
-        loader: ExtractSCSS.extract({
-          use: ["css-loader", "postcss-loader", "sass-loader"],
-          fallback: "style-loader"
-        })
+        test: /\.s?[ac]ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "style-loader",
+          "css-loader",
+          "postcss-loader",
+          "sass-loader",
+        ]
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -84,8 +79,10 @@ module.exports = {
   },
 
   plugins: [
-    ExtractCSS,
-    ExtractSCSS,
+    new MiniCssExtractPlugin({
+      filename: "css/[name].css",
+      chunkFilename: "css/[id].css"
+    }),
     new CleanWebpackPlugin([OUTPUT_PATH], {
       verbose: true,
       allowExternal: true
