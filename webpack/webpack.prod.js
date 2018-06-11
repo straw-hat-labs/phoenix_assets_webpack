@@ -16,14 +16,14 @@ module.exports = merge(common, {
       new UglifyJSPlugin({
         cache: true,
         parallel: true,
-        sourceMap: true // set to true if you want JS source maps
+        sourceMap: true, // set to true if you want JS source maps
       }),
-      new OptimizeCSSAssetsPlugin({})
-    ]
+      new OptimizeCSSAssetsPlugin({}),
+    ],
   },
   plugins: [
     new WorkboxPlugin.InjectManifest({
-      swSrc: path.join(JS_PATH, "sw.js")
-    })
-  ]
+      swSrc: path.join(JS_PATH, "sw.js"),
+    }),
+  ],
 });

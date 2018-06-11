@@ -14,14 +14,14 @@ module.exports = {
 
   entry: {
     polyfills: "./src/polyfills.js",
-    app: ["./src/index.js"]
+    app: ["./src/index.js"],
   },
 
   output: {
     pathinfo: true,
     filename: "js/[name].js", // "js/[name].[chunkhash:8].js"
     chunkFilename: "js/[name].chunk.js", // "js/[name].[chunkhash:8].chunk.js"
-    path: OUTPUT_PATH
+    path: OUTPUT_PATH,
   },
 
   module: {
@@ -35,8 +35,8 @@ module.exports = {
           // This is a feature of `babel-loader` for webpack (not Babel itself).
           // It enables caching results in ./node_modules/.cache/babel-loader/
           // directory for faster rebuilds.
-          cacheDirectory: true
-        }
+          cacheDirectory: true,
+        },
       },
       {
         test: /\.elm$/,
@@ -46,16 +46,17 @@ module.exports = {
           options: {
             verbose: true,
             warn: true,
-            debug: true
-          }
-        }
+            debug: true,
+          },
+        },
       },
       {
         test: /\.(css)$/,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader"
-        ]
+          "css-loader",
+          "postcss-loader",
+        ],
       },
       {
         test: /\.s?[ac]ss$/,
@@ -64,15 +65,15 @@ module.exports = {
           "css-loader",
           "postcss-loader",
           "sass-loader",
-        ]
+        ],
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ["url-loader"]
+        use: ["url-loader"],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ["file-loader"]
+        use: ["file-loader"],
       }
     ]
   },
@@ -80,33 +81,33 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: "css/[name].css",
-      chunkFilename: "css/[id].css"
+      chunkFilename: "css/[id].css",
     }),
     new CleanWebpackPlugin([OUTPUT_PATH], {
       verbose: true,
-      allowExternal: true
+      allowExternal: true,
     }),
     new Webpack.ProvidePlugin({
-      jQuery: "jquery"
+      jQuery: "jquery",
     }),
     new Webpack.EnvironmentPlugin({
       APP_NAME: config.name,
-      VERSION: config.version
+      VERSION: config.version,
     }),
     new Dotenv({
       path: "../.env",
-      safe: true
+      safe: true,
     }),
     new CopyWebpackPlugin([
       {
         context: "./static",
         from: "**/*",
-        to: "."
+        to: ".",
       },
       {
         context: "./node_modules/font-awesome/fonts",
         from: "*",
-        to: "./fonts"
+        to: "./fonts",
       }
     ])
   ]
