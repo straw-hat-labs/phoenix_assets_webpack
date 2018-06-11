@@ -4,8 +4,8 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "start": "webpack --mode=development --config ./webpack/webpack.dev.js --watch",
-    "build": "webpack --mode=production --config ./webpack/webpack.prod.js"
+    "start": "NODE_ENV=development webpack --mode=development --config ./webpack/webpack.dev.js --watch",
+    "build": "NODE_ENV=production webpack --mode=production --config ./webpack/webpack.prod.js"
   },
   "browserslist": [
     "last 1 version"
