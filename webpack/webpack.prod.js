@@ -4,9 +4,9 @@ const path = require("path");
 const merge = require("webpack-merge");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const WorkboxPlugin = require("workbox-webpack-plugin");
+const { InjectManifest } = require("workbox-webpack-plugin");
 
-const { JS_PATH } = require("./paths");
+const { SOURCE_PATH } = require("./paths");
 const common = require("./webpack.common");
 
 module.exports = merge(common, {
@@ -22,8 +22,9 @@ module.exports = merge(common, {
     ],
   },
   plugins: [
-    new WorkboxPlugin.InjectManifest({
-      swSrc: path.join(JS_PATH, "sw.js"),
+    new InjectManifest({
+      swDest: "service-worker.js",
+      swSrc: path.join(SOURCE_PATH, "service-worker/config.js"),
     }),
   ],
 });
