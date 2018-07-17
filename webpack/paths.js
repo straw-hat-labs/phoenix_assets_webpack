@@ -7,5 +7,5 @@ const JS_PATH = path.resolve(__dirname, "../../priv/static/js");
 module.exports = {
   JS_PATH,
   SOURCE_PATH,
-  OUTPUT_PATH
+  OUTPUT_PATH,
 };

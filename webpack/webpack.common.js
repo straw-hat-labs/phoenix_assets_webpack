@@ -5,9 +5,11 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
+const Stencil = require("@stencil/webpack");
 
 const { OUTPUT_PATH, SOURCE_PATH } = require("./paths");
 const config = require("../package");
+const stencilCollection = require("../stencil-collection");
 
 module.exports = {
   target: "web",
@@ -84,11 +86,14 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: ["file-loader"],
-      }
-    ]
+      },
+    ],
   },
 
   plugins: [
+    new Stencil.StencilPlugin({
+      collections: stencilCollection,
+    }),
     new MiniCssExtractPlugin({
       filename: "css/[name].css",
       chunkFilename: "css/[id].css",
@@ -118,7 +123,7 @@ module.exports = {
         context: "./node_modules/font-awesome/fonts",
         from: "*",
         to: "./fonts",
-      }
-    ])
-  ]
+      },
+    ]),
+  ],
 };
