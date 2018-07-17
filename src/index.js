@@ -6,7 +6,7 @@ import "bootstrap/dist/js/bootstrap";
 // import 'phoenix_html'
 
 import "./css/app.scss";
-import socket from "./socket";
+import "./socket";
 import * as ServiceWorker from "./service-worker";
 
 console.log(
