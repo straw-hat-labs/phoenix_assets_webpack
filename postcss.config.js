@@ -1,10 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies,global-require */
 
-module.exports = ({ file, options, env }) => {
+module.exports = ({ env }) => {
   const isDev = env !== "production";
-  const nano = !isDev ? require("cssnano")({
-    preset: "default"
-  }) : undefined;
+  const nano = !isDev
+    ? require("cssnano")({
+        preset: "default",
+      })
+    : undefined;
 
   return {
     plugins: [
@@ -13,7 +15,7 @@ module.exports = ({ file, options, env }) => {
         stage: 0,
       }),
       require("postcss-flexbugs-fixes"),
-      nano
-    ]
+      nano,
+    ],
   };
 };
