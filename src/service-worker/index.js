@@ -4,12 +4,12 @@ import { register } from "register-service-worker";
 
 // If you change the route, please make sure to fix your workbox-webpack-plugin setup
 // on your production config.
-export const WORKER_FILE_NAME = "service-worker.js";
+export const WORKER_FILE_NAME = "/js/service-worker.js";
 
 export const registerWorker = () => {
-  if (process.env.NODE_ENV !== "production") return;
+  if (process.env.NODE_ENV !== "production") return undefined;
 
-  return register(`/js/${WORKER_FILE_NAME}`, {
+  return register(WORKER_FILE_NAME, {
     ready() {
       console.log(
         `App is being served from cache by a service worker.
@@ -29,6 +29,6 @@ export const registerWorker = () => {
     },
     error(error) {
       console.error("Error during service worker registration:", error);
-    }
+    },
   });
 };
