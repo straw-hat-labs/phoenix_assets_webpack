@@ -42,7 +42,7 @@
     "postcss-import": "11.1.0",
     "postcss-loader": "2.1.6",
     "postcss-preset-env": "5.2.2",
-    "prettier": "1.13.7",
+    "prettier": "1.14.0",
     "sass-loader": "7.0.3",
     "style-loader": "0.21.0",
     "uglifyjs-webpack-plugin": "1.2.7",
