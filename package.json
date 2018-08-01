@@ -18,7 +18,7 @@
     "register-service-worker": "1.4.1"
   },
   "devDependencies": {
-    "@babel/core": "7.0.0-beta.54",
+    "@babel/core": "7.0.0-beta.55",
     "@babel/preset-env": "7.0.0-beta.55",
     "@stencil/webpack": "0.0.6",
     "babel-eslint": "8.2.6",
