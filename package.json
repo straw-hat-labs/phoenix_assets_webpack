@@ -28,7 +28,7 @@
     "css-loader": "1.0.0",
     "cssnano": "4.1.0",
     "dotenv-webpack": "1.5.7",
-    "elm-webpack-loader": "4.5.0",
+    "elm-webpack-loader": "5.0.0",
     "eslint": "5.2.0",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-config-prettier": "3.0.1",
