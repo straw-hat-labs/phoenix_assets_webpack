@@ -22,7 +22,7 @@
     "@babel/preset-env": "7.0.0-beta.55",
     "@stencil/webpack": "0.0.6",
     "babel-eslint": "8.2.6",
-    "babel-loader": "8.0.0-beta.4",
+    "babel-loader": "8.0.0",
     "clean-webpack-plugin": "0.1.19",
     "copy-webpack-plugin": "4.5.2",
     "css-loader": "1.0.0",
