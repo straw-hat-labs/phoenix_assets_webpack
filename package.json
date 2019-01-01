@@ -27,7 +27,7 @@
     "copy-webpack-plugin": "4.6.0",
     "css-loader": "1.0.1",
     "cssnano": "4.1.7",
-    "dotenv-webpack": "1.5.7",
+    "dotenv-webpack": "1.6.0",
     "elm-webpack-loader": "5.0.0",
     "eslint": "5.9.0",
     "eslint-config-airbnb-base": "13.1.0",
