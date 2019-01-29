@@ -1,12 +1,12 @@
 module.exports = {
-  parser: "babel-eslint",
-  extends: ["airbnb-base", "prettier"],
-  plugins: ["prettier"],
+  parser: 'babel-eslint',
+  extends: ['airbnb-base', 'prettier'],
+  plugins: ['prettier'],
   env: {
     browser: true,
-    node: true
+    node: true,
   },
   rules: {
-    "prettier/prettier": "error"
-  }
+    'prettier/prettier': 'error',
+  },
 };

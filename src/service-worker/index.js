@@ -1,13 +1,13 @@
 /* eslint-disable no-console */
 
-import { register } from "register-service-worker";
+import { register } from 'register-service-worker';
 
 // If you change the route, please make sure to fix your workbox-webpack-plugin setup
 // on your production config.
-export const WORKER_FILE_NAME = "/js/service-worker.js";
+export const WORKER_FILE_NAME = '/js/service-worker.js';
 
 export const registerWorker = () => {
-  if (process.env.NODE_ENV !== "production") return undefined;
+  if (process.env.NODE_ENV !== 'production') return undefined;
 
   return register(WORKER_FILE_NAME, {
     ready() {
@@ -17,18 +17,18 @@ export const registerWorker = () => {
       );
     },
     cached() {
-      console.log("Content has been cached for offline use.");
+      console.log('Content has been cached for offline use.');
     },
     updated() {
-      console.log("New content is available; please refresh.");
+      console.log('New content is available; please refresh.');
     },
     offline() {
       console.log(
-        "No internet connection found. App is running in offline mode."
+        'No internet connection found. App is running in offline mode.'
       );
     },
     error(error) {
-      console.error("Error during service worker registration:", error);
+      console.error('Error during service worker registration:', error);
     },
   });
 };

@@ -1,4 +1,9 @@
 @import "variables";
 @import "~bootstrap/scss/bootstrap";
-@import "~font-awesome/scss/font-awesome";
+
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
 @import "phoenix";
