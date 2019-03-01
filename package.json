@@ -15,7 +15,7 @@
     "phoenix": "1.4.0",
     "phoenix_html": "2.12.0",
     "popper.js": "1.14.6",
-    "register-service-worker": "1.5.2"
+    "register-service-worker": "1.6.2"
   },
   "devDependencies": {
     "@babel/core": "7.2.2",
