@@ -18,7 +18,7 @@
     "register-service-worker": "1.5.2"
   },
   "devDependencies": {
-    "@babel/core": "7.2.2",
+    "@babel/core": "7.3.4",
     "@babel/preset-env": "7.3.1",
     "@stencil/webpack": "0.0.6",
     "babel-eslint": "10.0.1",
@@ -28,7 +28,7 @@
     "css-loader": "2.1.0",
     "cssnano": "4.1.8",
     "dotenv-webpack": "1.7.0",
-    "eslint": "5.13.0",
+    "eslint": "5.14.1",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-config-prettier": "4.0.0",
     "eslint-plugin-import": "2.15.0",
@@ -40,15 +40,15 @@
     "postcss-flexbugs-fixes": "4.1.0",
     "postcss-import": "12.0.1",
     "postcss-loader": "3.0.0",
-    "postcss-preset-env": "6.5.0",
+    "postcss-preset-env": "6.6.0",
     "prettier": "1.16.4",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
     "uglifyjs-webpack-plugin": "2.1.1",
     "url-loader": "1.1.2",
-    "webpack": "4.29.0",
+    "webpack": "4.29.6",
     "webpack-cli": "3.2.1",
     "webpack-merge": "4.2.1",
-    "workbox-webpack-plugin": "3.6.3"
+    "workbox-webpack-plugin": "4.0.0"
   }
 }
