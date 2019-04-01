@@ -4155,9 +4155,9 @@ phoenix@1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/phoenix/-/phoenix-1.4.1.tgz#c052f1f8abfa22d9511f906298a70e4e938c8970"
 
-phoenix_html@2.12.0:
-  version "2.12.0"
-  resolved "https://registry.yarnpkg.com/phoenix_html/-/phoenix_html-2.12.0.tgz#e3a215cf85301a741af4fa275ad08aa5b1827937"
+phoenix_html@2.13.2:
+  version "2.13.2"
+  resolved "https://registry.yarnpkg.com/phoenix_html/-/phoenix_html-2.13.2.tgz#28a2376b713e9d8dda0aee8710f7c73732ff0157"
 
 pify@^2.0.0, pify@^2.3.0:
   version "2.3.0"
