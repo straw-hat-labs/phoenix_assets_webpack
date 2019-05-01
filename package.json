@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.4.0",
-    "@babel/preset-env": "7.4.2",
+    "@babel/preset-env": "7.4.4",
     "@stencil/webpack": "0.0.6",
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.5",
