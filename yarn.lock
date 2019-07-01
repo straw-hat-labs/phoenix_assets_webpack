@@ -1339,7 +1339,7 @@ builtin-status-codes@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
 
-cacache@^11.0.2, cacache@^11.2.0, cacache@^11.3.2:
+cacache@^11.0.2, cacache@^11.3.2:
   version "11.3.2"
   resolved "https://registry.yarnpkg.com/cacache/-/cacache-11.3.2.tgz#2d81e308e3d258ca38125b676b98b2ac9ce69bfa"
   dependencies:
@@ -1608,6 +1608,10 @@ combined-stream@1.0.6, combined-stream@~1.0.6:
 commander@~2.17.1:
   version "2.17.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.17.1.tgz#bd77ab7de6de94205ceacc72f1716d29f20a77bf"
+
+commander@~2.20.0:
+  version "2.20.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.0.tgz#d58bb2b5c1ee8f87b0d340027e9e94e222c5a422"
 
 common-tags@^1.8.0:
   version "1.8.0"
@@ -3365,6 +3369,10 @@ is-utf8@^0.2.0:
 is-windows@^1.0.1, is-windows@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-windows/-/is-windows-1.0.2.tgz#d1850eb9791ecd18e6182ce12a30f396634bb19d"
+
+is-wsl@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/is-wsl/-/is-wsl-1.1.0.tgz#1f16e4aa22b04d1336b66188a66af3c600c3a66d"
 
 isarray@1.0.0, isarray@^1.0.0, isarray@~1.0.0:
   version "1.0.0"
@@ -6068,25 +6076,26 @@ typescript@^2.6.2:
   version "2.9.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.9.2.tgz#1cbf61d05d6b96269244eb6a3bce4bd914e0f00c"
 
-uglify-js@^3.0.0:
-  version "3.4.9"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.4.9.tgz#af02f180c1207d76432e473ed24a28f4a782bae3"
+uglify-js@^3.5.12:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.6.0.tgz#704681345c53a8b2079fb6cec294b05ead242ff5"
   dependencies:
-    commander "~2.17.1"
+    commander "~2.20.0"
     source-map "~0.6.1"
 
-uglifyjs-webpack-plugin@2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-2.1.2.tgz#70e5c38fb2d35ee887949c2a0adb2656c23296d5"
+uglifyjs-webpack-plugin@2.1.3:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-2.1.3.tgz#b00a18d1acda271deb755c99ba0d93568156eb76"
   dependencies:
-    cacache "^11.2.0"
-    find-cache-dir "^2.0.0"
+    cacache "^11.3.2"
+    find-cache-dir "^2.1.0"
+    is-wsl "^1.1.0"
     schema-utils "^1.0.0"
-    serialize-javascript "^1.4.0"
+    serialize-javascript "^1.7.0"
     source-map "^0.6.1"
-    uglify-js "^3.0.0"
-    webpack-sources "^1.1.0"
-    worker-farm "^1.5.2"
+    uglify-js "^3.5.12"
+    webpack-sources "^1.3.0"
+    worker-farm "^1.7.0"
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
@@ -6458,9 +6467,9 @@ workbox-window@^4.3.1:
   dependencies:
     workbox-core "^4.3.1"
 
-worker-farm@^1.5.2:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/worker-farm/-/worker-farm-1.6.0.tgz#aecc405976fab5a95526180846f0dba288f3a4a0"
+worker-farm@^1.5.2, worker-farm@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/worker-farm/-/worker-farm-1.7.0.tgz#26a94c5391bbca926152002f69b84a4bf772e5a8"
   dependencies:
     errno "~0.1.7"
 
