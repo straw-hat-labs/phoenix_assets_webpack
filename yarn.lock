@@ -4381,9 +4381,9 @@ performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
 
-phoenix@1.4.9:
-  version "1.4.9"
-  resolved "https://registry.yarnpkg.com/phoenix/-/phoenix-1.4.9.tgz#0e251514af9627d61924ce9194e6e414f392b58d"
+phoenix@1.4.10:
+  version "1.4.10"
+  resolved "https://registry.yarnpkg.com/phoenix/-/phoenix-1.4.10.tgz#02ebd5bf57bdbeb3ff43d8de6d44a8af7968991b"
 
 phoenix_html@2.13.2:
   version "2.13.2"
