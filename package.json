@@ -8,18 +8,18 @@
     "build": "NODE_ENV=production webpack --mode=production --config ./webpack/webpack.prod.js"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "5.10.2",
+    "@fortawesome/fontawesome-free": "5.11.2",
     "babel-polyfill": "6.26.0",
     "bootstrap": "4.3.1",
     "jquery": "3.4.1",
-    "phoenix": "1.4.9",
+    "phoenix": "1.4.10",
     "phoenix_html": "2.13.2",
     "popper.js": "1.15.0",
     "register-service-worker": "1.6.2"
   },
   "devDependencies": {
-    "@babel/core": "7.4.5",
-    "@babel/preset-env": "7.5.5",
+    "@babel/core": "7.6.2",
+    "@babel/preset-env": "7.6.2",
     "@stencil/webpack": "0.0.6",
     "babel-eslint": "10.0.3",
     "babel-loader": "8.0.6",
@@ -28,11 +28,11 @@
     "css-loader": "3.1.0",
     "cssnano": "4.1.10",
     "dotenv-webpack": "1.7.0",
-    "eslint": "5.16.0",
+    "eslint": "6.5.1",
     "eslint-config-airbnb-base": "14.0.0",
-    "eslint-config-prettier": "6.1.0",
+    "eslint-config-prettier": "6.3.0",
     "eslint-plugin-import": "2.18.2",
-    "eslint-plugin-prettier": "3.1.0",
+    "eslint-plugin-prettier": "3.1.1",
     "file-loader": "4.2.0",
     "mini-css-extract-plugin": "0.8.0",
     "node-sass": "4.12.0",
@@ -47,7 +47,7 @@
     "uglifyjs-webpack-plugin": "2.2.0",
     "url-loader": "2.1.0",
     "webpack": "4.41.0",
-    "webpack-cli": "3.3.5",
+    "webpack-cli": "3.3.9",
     "webpack-merge": "4.2.2",
     "workbox-webpack-plugin": "4.3.1"
   }
